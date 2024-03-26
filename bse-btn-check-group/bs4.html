@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko" >
+<head>
+    <title>bse-btn-check-group for bootstrap4</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="http://www.mins01.com/favicon.ico"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="/js/ForGoogle.js"></script>
+    <!-- google analytics -->
+    <script>if(window.ForGoogle){ ForGoogle.analytics() }else{ console.log("failure : ForGoogle.analytics()");}</script>
+    
+
+    <!-- jquery 관련 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script> -->
+
+    <!-- 부트스트랩 5.3.x -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+    <!-- 부트스트랩 4.6.x -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- vue.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    
+    <!-- meta og -->
+    
+    <meta property="og:title" content="bse-btn-check-group for bootstrap4">
+    <meta property="og:description" content="bse-btn-check-group for bootstrap4">
+    <meta name="og:image" content="http://www.mins01.com/img/logo.gif">
+    <meta property="og:image:width" content="190">
+    <meta property="og:image:height" content="70" />
+    <meta property="og:site_name" content="bse-btn-check-group for bootstrap4" />
+    <meta property="og:type" content="website">
+    
+    <!-- //meta og -->
+    
+    <style>
+        .bse-btn-check-group{
+            
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap{
+            padding: 0;
+            margin: 0;
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn{
+
+        }
+        
+
+        .bse-btn-check-group>.bse-btn-check-wrap:not(:last-child)>.btn {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap:not(:first-child)>.btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: calc(var(--bs-border-width,1px)* -1);
+        }
+
+        .bse-btn-check-group>.bse-btn-check-wrap>:is(input[type=checkbox],input[type=radio]){
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            pointer-events: none;
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>:is(input[type=checkbox],input[type=radio]):focus+.btn{
+            box-shadow: 0 0 0 0.2rem rgba(127,127,127,.5);
+        }
+
+
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-primary:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #0062cc;
+            border-color: #005cbf
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-secondary:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #545b62;
+            border-color: #4e555b;
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-success:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #1e7e34;
+            border-color: #1c7430
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-info:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #117a8b;
+            border-color: #10707f
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-warning:not(:disabled):not(.disabled){
+            color: #212529;
+            background-color: #d39e00;
+            border-color: #c69500
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-danger:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #bd2130;
+            border-color: #b21f2d
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-light:not(:disabled):not(.disabled){
+            color: #212529;
+            background-color: #dae0e5;
+            border-color: #d3d9df
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-dark:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #1d2124;
+            border-color: #171a1d
+        }
+
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-primary:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-secondary:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-success:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-info:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #17a2b8;
+            border-color: #17a2b8
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-warning:not(:disabled):not(.disabled){
+            color: #212529;
+            background-color: #ffc107;
+            border-color: #ffc107
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-danger:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-light:not(:disabled):not(.disabled){
+            color: #212529;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa
+        }
+        .bse-btn-check-group>.bse-btn-check-wrap>.btn-check:checked+.btn.btn-outline-dark:not(:disabled):not(.disabled){
+            color: #fff;
+            background-color: #343a40;
+            border-color: #343a40
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>be-check-group</h1>
+        <h2>부트스트랩 4 기준 btn-group + btn-check 확장</h2>
+        <hr>
+        <a href="index.html">for bs5</a>
+        <a href="bs4.html">for bs4</a>
+        <a href="bs3.html">for bs3</a>
+        <hr>
+        bs4, bs3의 경우 컬러를 커스텀 했다면 bse-btn-check-group 의 색상도 바꿔야함<br>
+        bs5는 색상 그대로 사용함.
+        <hr>
+        <h2>bootstrap .btn-group</h2>
+        <div>bootstrap.js 가 필요</div>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary active"><input type="checkbox" name="checkbox"  checked> Checkbox</label>
+                <label class="btn btn-secondary"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-success"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-info"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-warning"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-danger"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-light"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-dark"><input type="checkbox" name="checkbox" > Checkbox</label>
+            </div>
+        </form>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-primary active"><input type="checkbox" name="checkbox"  checked> Checkbox</label>
+                <label class="btn btn-outline-secondary"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-outline-success"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-outline-info"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-outline-warning"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-outline-danger"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-outline-light"><input type="checkbox" name="checkbox" > Checkbox</label>
+                <label class="btn btn-outline-dark"><input type="checkbox" name="checkbox" > Checkbox</label>
+            </div>
+        </form>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary active"><input type="radio" name="radio"  checked> Radio</label>
+                <label class="btn btn-secondary"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-success"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-info"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-warning"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-danger"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-light"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-dark"><input type="radio" name="radio" > Radio</label>
+            </div>
+        </form>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-primary active"><input type="radio" name="radio"  checked> Radio</label>
+                <label class="btn btn-outline-secondary"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-outline-success"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-outline-info"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-outline-warning"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-outline-danger"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-outline-light"><input type="radio" name="radio" > Radio</label>
+                <label class="btn btn-outline-dark"><input type="radio" name="radio" > Radio</label>
+            </div>
+        </form>
+        <hr>
+        <h2>.bse-btn-check-group</h2>
+        <div>label로 감싸여 있어서 for와 id가 불필요.<br>JS가 불필요</div>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group bse-btn-check-group" role="group" >
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" checked onclick="console.log('click checkbox');">
+                    <div class="btn btn-primary" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-secondary" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-success" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-info" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-warning" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-danger" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-light" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-dark" >Checkbox</div>
+                </label>
+              </div>
+        </form>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group bse-btn-check-group" role="group" >
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" checked onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-primary" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-secondary" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-success" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-info" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-warning" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-danger" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-light" >Checkbox</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="checkbox" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click checkbox');">
+                    <div class="btn btn-outline-dark" >Checkbox</div>
+                </label>
+              </div>
+        </form>
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group bse-btn-check-group" role="group" >
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" checked onclick="console.log('click radio');">
+                    <div class="btn btn-primary" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-secondary" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-success" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-info" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-warning" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-danger" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-light" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-dark" >Radio</div>
+                </label>
+              </div>
+        </form>
+
+        <form action="" onsubmit="return false;" class="m-1">
+            <div class="btn-group bse-btn-check-group" role="group" >
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" checked onclick="console.log('click radio');">
+                    <div class="btn btn-outline-primary" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-secondary" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-success" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-info" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-warning" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-danger" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-light" >Radio</div>
+                </label>
+                <label class="bse-btn-check-wrap">
+                    <input type="radio" class="btn-check" autocomplete="off" name="btncheck" value="1" onclick="console.log('click radio');">
+                    <div class="btn btn-outline-dark" >Radio</div>
+                </label>
+              </div>
+        </form>
+    </div>
+</body>
+</html>
